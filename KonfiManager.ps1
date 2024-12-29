@@ -1,3 +1,5 @@
+$Label1_Click = {
+}
 $comboBoxZutat1_SelectedIndexChanged = {
 }
 

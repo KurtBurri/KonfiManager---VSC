@@ -6,9 +6,9 @@ $MainForm = New-Object -TypeName System.Windows.Forms.Form
 function InitializeComponent
 {
 $GroupBox1_Zutaten = (New-Object -TypeName System.Windows.Forms.GroupBox)
+$comboBoxZutat2 = (New-Object -TypeName System.Windows.Forms.ComboBox)
 $comboBoxZutat1 = (New-Object -TypeName System.Windows.Forms.ComboBox)
 $Label_schlemmerwerk = (New-Object -TypeName System.Windows.Forms.Label)
-$comboBoxZutat2 = (New-Object -TypeName System.Windows.Forms.ComboBox)
 $GroupBox1_Zutaten.SuspendLayout()
 $MainForm.SuspendLayout()
 #
@@ -24,6 +24,15 @@ $GroupBox1_Zutaten.Size = (New-Object -TypeName System.Drawing.Size -ArgumentLis
 $GroupBox1_Zutaten.TabIndex = [System.Int32]0
 $GroupBox1_Zutaten.TabStop = $false
 $GroupBox1_Zutaten.Text = [System.String]'Zutaten'
+#
+#comboBoxZutat2
+#
+$comboBoxZutat2.Font = (New-Object -TypeName System.Drawing.Font -ArgumentList @([System.String]'Tahoma',[System.Single]9.3))
+$comboBoxZutat2.FormattingEnabled = $true
+$comboBoxZutat2.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]9,[System.Int32]62))
+$comboBoxZutat2.Name = [System.String]'comboBoxZutat2'
+$comboBoxZutat2.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]22))
+$comboBoxZutat2.TabIndex = [System.Int32]1
 #
 #comboBoxZutat1
 #
@@ -48,15 +57,6 @@ $Label_schlemmerwerk.Size = (New-Object -TypeName System.Drawing.Size -ArgumentL
 $Label_schlemmerwerk.TabIndex = [System.Int32]0
 $Label_schlemmerwerk.Text = [System.String]'schlemmerwerk.ch'
 $Label_schlemmerwerk.add_Click($Label1_Click)
-#
-#comboBoxZutat2
-#
-$comboBoxZutat2.Font = (New-Object -TypeName System.Drawing.Font -ArgumentList @([System.String]'Tahoma',[System.Single]9.3))
-$comboBoxZutat2.FormattingEnabled = $true
-$comboBoxZutat2.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]9,[System.Int32]62))
-$comboBoxZutat2.Name = [System.String]'comboBoxZutat2'
-$comboBoxZutat2.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]22))
-$comboBoxZutat2.TabIndex = [System.Int32]1
 #
 #MainForm
 #
