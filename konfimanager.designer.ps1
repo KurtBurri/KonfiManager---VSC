@@ -3,12 +3,14 @@ $MainForm = New-Object -TypeName System.Windows.Forms.Form
 [System.Windows.Forms.ComboBox]$comboBoxZutat2 = $null
 [System.Windows.Forms.ComboBox]$comboBoxZutat1 = $null
 [System.Windows.Forms.Label]$Label_schlemmerwerk = $null
+[System.Windows.Forms.Button]$Button_Ende = $null
 function InitializeComponent
 {
 $GroupBox1_Zutaten = (New-Object -TypeName System.Windows.Forms.GroupBox)
 $comboBoxZutat2 = (New-Object -TypeName System.Windows.Forms.ComboBox)
 $comboBoxZutat1 = (New-Object -TypeName System.Windows.Forms.ComboBox)
 $Label_schlemmerwerk = (New-Object -TypeName System.Windows.Forms.Label)
+$Button_Ende = (New-Object -TypeName System.Windows.Forms.Button)
 $GroupBox1_Zutaten.SuspendLayout()
 $MainForm.SuspendLayout()
 #
@@ -33,6 +35,7 @@ $comboBoxZutat2.Location = (New-Object -TypeName System.Drawing.Point -ArgumentL
 $comboBoxZutat2.Name = [System.String]'comboBoxZutat2'
 $comboBoxZutat2.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]22))
 $comboBoxZutat2.TabIndex = [System.Int32]1
+$comboBoxZutat2.add_SelectedIndexChanged($comboBoxZutat2_SelectedIndexChanged)
 #
 #comboBoxZutat1
 #
@@ -56,13 +59,25 @@ $Label_schlemmerwerk.Name = [System.String]'Label_schlemmerwerk'
 $Label_schlemmerwerk.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]289,[System.Int32]57))
 $Label_schlemmerwerk.TabIndex = [System.Int32]0
 $Label_schlemmerwerk.Text = [System.String]'schlemmerwerk.ch'
-$Label_schlemmerwerk.add_Click($Label1_Click)
+#
+#Button_Ende
+#
+$Button_Ende.BackColor = [System.Drawing.Color]::FromArgb(([System.Int32]([System.Byte][System.Byte]255)),([System.Int32]([System.Byte][System.Byte]192)),([System.Int32]([System.Byte][System.Byte]192)))
+
+$Button_Ende.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]357,[System.Int32]370))
+$Button_Ende.Name = [System.String]'Button_Ende'
+$Button_Ende.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]90,[System.Int32]32))
+$Button_Ende.TabIndex = [System.Int32]1
+$Button_Ende.Text = [System.String]'Beenden'
+$Button_Ende.UseVisualStyleBackColor = $false
+$Button_Ende.add_Click($Button_Ende_Click)
 #
 #MainForm
 #
 $MainForm.BackColor = [System.Drawing.Color]::FromArgb(([System.Int32]([System.Byte][System.Byte]134)),([System.Int32]([System.Byte][System.Byte]26)),([System.Int32]([System.Byte][System.Byte]34)))
 
 $MainForm.ClientSize = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]479,[System.Int32]445))
+$MainForm.Controls.Add($Button_Ende)
 $MainForm.Controls.Add($Label_schlemmerwerk)
 $MainForm.Controls.Add($GroupBox1_Zutaten)
 $MainForm.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::Fixed3D
@@ -74,5 +89,6 @@ Add-Member -InputObject $MainForm -Name GroupBox1_Zutaten -Value $GroupBox1_Zuta
 Add-Member -InputObject $MainForm -Name comboBoxZutat2 -Value $comboBoxZutat2 -MemberType NoteProperty
 Add-Member -InputObject $MainForm -Name comboBoxZutat1 -Value $comboBoxZutat1 -MemberType NoteProperty
 Add-Member -InputObject $MainForm -Name Label_schlemmerwerk -Value $Label_schlemmerwerk -MemberType NoteProperty
+Add-Member -InputObject $MainForm -Name Button_Ende -Value $Button_Ende -MemberType NoteProperty
 }
 . InitializeComponent
